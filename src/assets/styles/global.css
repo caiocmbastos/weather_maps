@@ -1,0 +1,38 @@
+:root {
+    font-size: 60%;
+    --color-background: #F0F0F5;
+    --color-text: #1C1C1C;
+    --color-text-button: #FFF;
+    --color-background-button: #1E90FF;
+    --color-background-button-darker: #0000CD;
+    --color-background-button-lighter: #87CEEB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    height: 100vh;
+}
+
+body {
+    background: var(--color-background);
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+body, input, button {
+    font: 500 1.4rem Roboto;
+}
+
+@media(min-width: 700px) {
+    :root {
+        font-size: 62.5%;
+    }
+}

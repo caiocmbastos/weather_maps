@@ -1,0 +1,38 @@
+.input-block label {
+    font: 400 1.6rem Roboto;
+    color: var(--color-text);
+}
+
+.input-block input {
+    border-radius: 5px;
+    border-style: double;
+    display: inline-block;
+}
+
+.input-block input[type=submit] {
+    background-color: var(--color-background-button);
+    color: var(--color-text-button);
+    width: 50px;
+    height: 1.8rem;
+    cursor: pointer;
+    border: none;
+    padding: 50 50 70 50;
+    transition: 0.2s;
+}
+
+.input-block input[type=submit]:hover {
+    background-color: var(--color-background-button-darker);
+}
+
+@media(min-width: 700px){
+    .input-block input[type=submit] {
+        background-color: var(--color-background-button);
+        color: var(--color-text-button);
+        width: 50px;
+        height: 1.8rem;
+        cursor: pointer;
+        border: none;
+        padding: 50 50 70 50;
+        transition: 0.2s;
+    }
+}

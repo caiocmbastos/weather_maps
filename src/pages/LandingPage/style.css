@@ -1,0 +1,35 @@
+#home-content {
+    width: 100%;
+
+    margin: 0 auto;
+}
+
+#home-content header {
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font: 700 1.6rem Roboto;
+}
+
+#home-content fieldset {
+    margin-top: 5px;
+    min-inline-size: auto;
+}
+
+#home-content fieldset .leaflet-container {
+    width: 100%;
+    height: 700px;
+}
+
+#home-content button {
+    margin-left: 230px;
+}
+
+@media(min-width: 700px){
+    #home-content fieldset .leaflet-container {
+        width: 100%;
+        height: 800px;
+    }
+}
