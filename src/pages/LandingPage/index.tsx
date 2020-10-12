@@ -7,6 +7,7 @@ import api from  '../../services/api'
 import './style.css'
 
 import Input from '../../components/Input'
+import { act } from 'react-dom/test-utils'
 
 interface APIResponse {
     id: number
@@ -22,15 +23,26 @@ interface APIResponse {
     }
 }
 
-// interface ActiveCity {
-//     prevState: null
-// }
+interface SelectedCity {
+    name: string
+    id: number
+    coord: {
+        lat: number
+        lon:number
+    }
+    main: {
+        temp: number
+        temp_min: number
+        temp_max: number
+    }
+}
 
 const LandingPage = () => {
 
     const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0,0])
     const [initialPosition, setInitialPosition] = useState<[number, number]>([0,0])
     const [weather, setWeather] = useState<APIResponse[]>([])
+    const [activeCity, setActiveCity] = useState<SelectedCity | null>(null)
 
     const APPID = process.env.REACT_APP_OPENWEATHER_API_KEY
 
@@ -53,7 +65,7 @@ const LandingPage = () => {
     const cnt = 15
     const units = "metric"
 
-    async function searchWeather(){
+    async function searchWeather() {
         const response = await api.get('/find', {
             params: {
                 lat,
@@ -88,9 +100,26 @@ const LandingPage = () => {
                             <Marker
                                 key={city.id}
                                 position={[city.coord.lat, city.coord.lon]}
-                                onclick={handleMapClick}
+                                onclick={() => {
+                                    setActiveCity(city)
+                                }}
                             />
                         ))}
+                        {activeCity && (
+                            <Popup
+                                position={[activeCity.coord.lat, activeCity.coord.lon]}
+                                onClose={() => {
+                                    setActiveCity(null)
+                                }}
+                            >
+                                <div>
+                                    <h2>Name: {activeCity.name}</h2>
+                                    <p>Current Temperature: {activeCity.main.temp}</p>
+                                    <p>Maximum Temperature: {activeCity.main.temp_max}</p>
+                                    <p>Minimum Temperature: {activeCity.main.temp_min}</p>
+                                </div>
+                            </Popup>
+                        )}
                     </Map>
                 </fieldset>
         </div>
