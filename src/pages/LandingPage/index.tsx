@@ -44,7 +44,7 @@ const LandingPage = () => {
     const [weather, setWeather] = useState<APIResponse[]>([])
     const [activeCity, setActiveCity] = useState<SelectedCity | null>(null)
 
-    const APPID = process.env.REACT_APP_OPENWEATHER_API_KEY
+    const APPID = "cbc78f2c53f3dbfb45d98f5b89b51554"
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(position => {
