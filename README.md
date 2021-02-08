@@ -12,7 +12,7 @@
 -  Yarn
 
 ## Preview
-![Home Page]()
+![Home Page](https://github.com/caiocmbastos/weather_maps/blob/master/weather_map.PNG)
 
 ## :information_source: How To Use
 
