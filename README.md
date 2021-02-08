@@ -1,6 +1,4 @@
-<h2>
-  Weather Maps it's an app that shows the weather info about 15 cities close to where you clicked on the map
-</h2>
+# Weather Maps it's an app that shows the weather info about 15 cities close to where you clicked on the map
 
 ## :rocket: Technologies
 
@@ -12,6 +10,9 @@
 -  Typescript
 -  VS Code
 -  Yarn
+
+## Preview
+![Home Page]()
 
 ## :information_source: How To Use
 
